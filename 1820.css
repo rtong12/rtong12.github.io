@@ -90,7 +90,7 @@ figcaption { text-align: center; }
   text-align: left;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .layout-container {
     grid-template-columns: 1fr;
   }
@@ -101,7 +101,7 @@ figcaption { text-align: center; }
 }
 
 /* Grid layout for tablet screens */
-@media (min-width: 1000px) {
+@media (min-width: 1200px) {
   .fleximage {
     display: flex;
     justify-content: space-around; /* Horizontally centers items */
