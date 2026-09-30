@@ -15,6 +15,10 @@ header a:hover { color: #A52A2A;
 }
 #wrapper {
   background-color: #DDDDDD;
+  margin: auto;
+  width: 80%;
+  border: 1px solid #8DEA8A;
+  box-shadow: 3px 3px 3px #8DEA8A;
 }
 nav { font-weight: bold; 
    padding: 0;
@@ -24,14 +28,27 @@ nav { font-weight: bold;
 }
 nav ul { list-style-type: none; padding-left: 0; 
         margin:0%; font-size: 1em; } 
-nav li { border-bottom: 1px solid #040316; }
-nav a { text-decoration: none; }
+nav li { border-bottom: 1px solid #8DEA8A; }
+nav a { text-decoration: none;}
 nav a:link { color: #1976D2; }
-nav a:visited { color: #040316; }
-nav a:hover { color: #A52A2A; }
-a {text-decoration: none; }
+nav a:visited { color: #1976D2; }
+nav a:hover { color: #A52A2A}
+nav ul ul { position: absolute;
+            background-color: #FFFFFF;
+            padding: 0;
+            display: none;
+            text-align: left; 
+            margin-left: 1em;}
+nav ul ul li { display: block;
+         width: 12em;
+         padding-left: 0em;
+         margin-left: 0; 
+         font-weight: normal;
+         font-size: 0.9em;}
+nav li:hover ul { display: block; }
+a {text-decoration: none; padding: 0.5em 1em; }
 a:link { color: #1976D2; }
-a:visited { color: #040316; }
+a:visited { color: #1976D2; }
 a:hover { color: #A52A2A; }
 main { background-color: #DDDDDD;
   padding: 30px 20px 20px 20px;
@@ -40,22 +57,65 @@ main { background-color: #DDDDDD;
   flex: 1;
 }
 h4 { color: #040316; font-family: Arial, Helvetica, sans-serif; margin-top: 0; }
-h3 { color: #1976D2; font-family: Georgia, "Times New Roman", serif; margin-bottom: 0; }
-h2 { color: #1976D2; font-family: Georgia, "Times New Roman", serif;
+h3 { color: #0116cc; font-family: Georgia, "Times New Roman", serif; margin-bottom: 0; }
+h2 { color: #0116cc; font-family: Georgia, "Times New Roman", serif;
   text-shadow: 1px 1px #CCCCCC; margin-top: 0;
 }
 h1 { margin-top: 0; margin-bottom: 0; 
   letter-spacing: 0.25em;
   font-family: Georgia, 'Times New Roman', Times, serif;
   padding: 0em 0.5em 0em 0.5em; }
-#contact { font-size: 90%; }
+
 footer { background-color: #DCF2CF;
   font-size: 75%;
   font-style: italic;
   text-align: center;
   font-family: Georgia, "Times New Roman", serif;
-  padding: 2em
+  padding: 1em
 }
+ul { list-style-type: none; }
+li { margin-bottom: 0.5em; }
+#contact { font-size: 90%; }
+
+/* Style Definition for no border table 
+.table-noborder {
+  border: none;
+  border-collapse: collapse;
+}
+.table-noborder th td {
+  text-align: left;
+  padding: 0em 0em 0.3em 2em;
+  border: none;
+} */
+
+table { border: 2px solid #1c8b00; border-collapse: collapse; }
+td, th { 
+  text-align: center; padding: 0.5em; border: 2px solid #1c8b00; overflow-wrap: break-word; 
+}
+.text { text-align: left; }
+.striped-table tr:nth-of-type(odd) { background-color: #DCF2CF; }
+
+.fleximage {
+    display: flex; flex-wrap: wrap;
+    justify-content: space-around; /* Horizontally centers items */
+}
+figure { 
+    position: relative;
+	  z-index: 1; opacity: .75;
+	  background-color: #DDDDDD; color: #040316;
+    margin: 1em; font-size: .5em; text-align: center;
+	  transition: all ease-out 1s; 
+}
+figure:hover { 
+    opacity: 1; z-index: 999;
+	  box-shadow: 3px 3px 3px #333;
+	  color: rgba(0,0,0,1);
+    transform: scale(3);
+}
+figcaption { text-align: center; }
+p a {display: inline; margin: 0; padding: 0; }
+li a {display: inline; margin: 0; padding: 0; }
+
 #homehero { width: 100%; aspect-ratio: 15 / 10; background-image: url(family.jpg);
   background-repeat: no-repeat; background-size: 100% 100%; 
 }
@@ -74,41 +134,26 @@ footer { background-color: #DCF2CF;
 #rhero { width: 100%; aspect-ratio: 15 / 10; background-image: url(rhero.jpg);
   background-repeat: no-repeat; background-size: 100% 100%; 
 }
-#estatehero { width: 100%; aspect-ratio: 15 / 10; background-image: url(estatehero.jpg);
+#estatehero { width: 100%; aspect-ratio: 15 / 10; background-image: url(estatehero.png);
   background-repeat: no-repeat; background-size: 100% 100%; 
 }
-figcaption { text-align: center; }
-
-/* Style Definition for no border table */
-.table-noborder {
-  border: none;
-  border-collapse: collapse;
+#ssheethero { width: 100%; aspect-ratio: 15 / 10; background-image: url(ssheethero.png);
+  background-repeat: no-repeat; background-size: 100% 100%; 
 }
-.table-noborder th, td {
-  padding: 0em 0em 0.3em 2em;
-  border: none;
-  text-align: left;
+
+label, input, select, textarea {
+  display: block;
+  width: 100%;       /* Expands each element across the full container width */
+  margin-bottom: 1em; /* Adds vertical spacing between fields */
 }
 
 @media (max-width: 1200px) {
-  .layout-container {
-    grid-template-columns: 1fr;
-  }
-  aside {
-    width: 100%; /* Spans full width on mobile */
-  }
-  aside { padding-left: 20px; padding-right: 20px; padding-bottom: 20px; }
+  .layout-container { grid-template-columns: 1fr; }
+  aside { width: 100%; padding-left: 20px; padding-right: 20px; padding-bottom: 20px; }
 }
 
 /* Grid layout for tablet screens */
 @media (min-width: 1200px) {
-  .fleximage {
-    display: flex;
-    justify-content: space-around; /* Horizontally centers items */
-    align-items: center;     /* Vertically centers items */
-    max-height: 100vh;
-    flex-wrap: wrap;
-  }
   nav ul {
     display: flex;
     flex-flow: row nowrap;
@@ -118,12 +163,6 @@ figcaption { text-align: center; }
     border-bottom: none; padding: 2px;
   }
   aside { padding-left: 20px; padding-right: 20px; padding-bottom: 20px; }
-  #wrapper {
-    margin: auto;
-    width: 80%;
-    border: 1px solid #8DEA8A;
-    box-shadow: 3px 3px 3px #8DEA8A;
-  }
   @supports (display: grid) {
     header { grid-area: header; }
     nav { grid-area: nav; }
@@ -145,22 +184,9 @@ figcaption { text-align: center; }
     }
   }
 }
+
 /* Grid layout for wide screens */
 @media (min-width: 1500px) {
-  aside { padding-left: 20px; padding-right: 20px; padding-bottom: 20px; }
-  #wrapper {
-    margin: auto;
-    width: 80%;
-    border: 1px solid #8DEA8A;
-    box-shadow: 3px 3px 3px #8DEA8A;
-  }
-  .fleximage {
-    display: flex;
-    justify-content: space-around; /* Horizontally centers items */
-    align-items: center;     /* Vertically centers items */
-    max-height: 100vh;
-    flex-wrap: wrap;
-  }  
   nav {
     text-align: left;
     padding-left: 1em;
@@ -168,6 +194,7 @@ figcaption { text-align: center; }
   nav li {
     border-bottom: none; padding: 3px;
   }
+  aside { padding-left: 20px; padding-right: 20px; padding-bottom: 20px; }
   @supports (display: grid) {
     nav ul {
       flex-direction: column;
