@@ -40,11 +40,11 @@ nav ul ul { position: absolute;
             text-align: left; 
             margin-left: 1em;}
 nav ul ul li { display: block;
-         width: 12em;
+         width: 7em;
          padding-left: 0em;
          margin-left: 0; 
          font-weight: normal;
-         font-size: 0.9em;}
+         font-size: 0.7em;}
 nav li:hover ul { display: block; }
 a {text-decoration: none; padding: 0.5em 1em; }
 a:link { color: #1976D2; }
