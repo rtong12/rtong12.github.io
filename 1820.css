@@ -136,12 +136,7 @@ label, input, select, textarea {
   width: 100%;       
   margin-bottom: 1em;
 }
-
-video {
-  display: block;  /* Converts video into a block box [3] */
-  margin: 0 auto;  /* Centers the block horizontally [4] */
-  max-width: 100%; /* Keeps the video responsive within its parent */
-}
+.video-container { display: flex; justify-content: space-around; align-items: center; }
 
 @media (max-width: 800px) {
   .layout-container { grid-template-columns: 1fr; }
